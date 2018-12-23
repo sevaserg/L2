@@ -16,6 +16,7 @@ private:
     stringstream ss;
     string temp;
 public:
+
     reader();
 
     void rw();

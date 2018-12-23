@@ -11,7 +11,6 @@ void reader::rw()
     try
     {
         p1.open("1.txt");
-        p2.open("2.txt");
         if (p1.is_open())
         {
             while(!p1.eof())
@@ -29,6 +28,8 @@ void reader::rw()
                 if (temp == "0") temp = "zero";
                 ss << temp << " ";
             }
+            p1.close();
+            p2.open("1.txt");
             p2<<ss.str();
         }
         else
