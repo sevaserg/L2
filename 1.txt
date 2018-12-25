@@ -1,1 +1,1 @@
-Buy 1 coke with 0 sugar, 8 apples, 2 pounds of flour, 9 cucumbers, 7 cans of dog food, 4 or maybe 5 packs of frozen mushrooms, 3 packs of milk and 6 tomatoes.
+I will, in fact, claim that the difference between a bad programmer and a good one is whether he considers his code or his data structures more important. Bad programmers worry about the code. Good programmers worry about data structures and their relationships.

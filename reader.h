@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <string.h>
 
 #define ERR_201 1
 
@@ -13,13 +14,13 @@ class reader
 private:
     ifstream p1;
     ofstream p2;
-    stringstream ss;
+    stringstream fin;
     string temp;
 public:
 
     reader();
 
-    void rw();
+    void rw(string word);
 
     ~reader();
 };

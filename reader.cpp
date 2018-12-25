@@ -1,13 +1,15 @@
 #include "reader.h"
 
-
 reader::reader()
 {
     cout << "Class reader was created!" << endl;
 }
 
-void reader::rw()
+void reader::rw(string word)
 {
+    string w2 = word + ".";
+    string w3 = word + ",";
+    int flag;
     try
     {
         p1.open("1.txt");
@@ -15,22 +17,32 @@ void reader::rw()
         {
             while(!p1.eof())
             {
-                p1>>temp;
-                if (temp == "1") temp = "one";
-                if (temp == "2") temp = "two";
-                if (temp == "3") temp = "three";
-                if (temp == "4") temp = "four";
-                if (temp == "5") temp = "five";
-                if (temp == "6") temp = "six";
-                if (temp == "7") temp = "seven";
-                if (temp == "8") temp = "eight";
-                if (temp == "9") temp = "nine";
-                if (temp == "0") temp = "zero";
-                ss << temp << " ";
+                stringstream sentence;
+                flag = 0;
+                do
+                {
+                    stringstream ss;
+                    getline(p1,temp, ' ');
+                    ss<<temp;
+                    cout<<ss.str()<<endl;
+                    if (ss.str() == word||ss.str() == w2||ss.str() == w3)
+                        {
+                            cout<<"!!!!!";
+                            flag = 1;
+                        }
+                    sentence<<ss.str()<<" ";
+                    temp = "";
+                }
+                while(sentence.str()[sentence.str().length() - 2]!='.'&&!p1.eof());
+                if (flag!=0)
+                {
+                    fin<<sentence.str()<<" ";
+                }
+
             }
             p1.close();
-            p2.open("1.txt");
-            p2<<ss.str();
+            p2.open("2.txt");
+            p2<<fin.str();
         }
         else
             throw ERR_201;
