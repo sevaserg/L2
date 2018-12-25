@@ -12,10 +12,8 @@ using namespace std;
 class reader
 {
 private:
-    ifstream p1;
     ofstream p2;
     stringstream fin;
-    string temp;
 public:
 
     reader();

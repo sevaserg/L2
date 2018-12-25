@@ -24,10 +24,8 @@ void reader::rw(string word)
                     stringstream ss;
                     getline(p1,temp, ' ');
                     ss<<temp;
-                    cout<<ss.str()<<endl;
                     if (ss.str() == word||ss.str() == w2||ss.str() == w3)
                         {
-                            cout<<"!!!!!";
                             flag = 1;
                         }
                     sentence<<ss.str()<<" ";
@@ -36,13 +34,11 @@ void reader::rw(string word)
                 while(sentence.str()[sentence.str().length() - 2]!='.'&&!p1.eof());
                 if (flag!=0)
                 {
-                    fin<<sentence.str()<<" ";
+                    cout<<sentence.str()<<" ";
                 }
 
             }
-            p1.close();
-            p2.open("2.txt");
-            p2<<fin.str();
+            cout<<endl;
         }
         else
             throw ERR_201;
